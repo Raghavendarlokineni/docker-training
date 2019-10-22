@@ -19,3 +19,31 @@ docker training repo
 | intreact with a container | `docker exec [OPTIONS] CONTAINER COMMAND [ARG...]` |
 | docker logs | `docker logs CONTAINER` # `-f`  not to stop/wait|
 | list running containers |  `docker ps`|
+
+
+## Examples
+
+Start nginx container
+
+`docker run nginx`
+
+Start Centos server and execute ping
+
+`docker container run centos ping -c 5 127.0.0.1`
+
+start nginx container with port exposed
+
+```docker run -p 80:80 nginx
+curl http://localhost:80
+```
+
+Adding volumes to container
+
+`docker run -p 80:80 -v /Users/rlokinen/Desktop/Backup/gitrepos/EXTERNAL/docker-training/html/:/usr/share/nginx/html nginx`
+
+Building image from dockerfile
+
+`docker build -t IMAGE:TAG -f Dockerfile-nginx .`
+
+Login to a container
+`docker exec -it CONTAINER /bin/bash`
