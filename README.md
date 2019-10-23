@@ -79,3 +79,35 @@ Building image from dockerfile
 
 Login to a container
 `docker exec -it CONTAINER /bin/bash`
+
+
+## Tagging and pushing Docker images
+
+```
+$ docker tag nginx-test:3.0 raghavendar/docker-training:latest
+
+$ docker push raghavendar/docker-training:latest
+The push refers to repository [docker.io/raghavendar/docker-training]
+1a8148369769: Preparing 
+ccdb13a20bf2: Preparing 
+9513cdf4e497: Preparing 
+7f083f9454c0: Preparing 
+29f36b5893dc: Preparing 
+denied: requested access to the resource is denied
+
+
+LAMU02WJ2MEHTD6:RabbitMQ rlokinen$ docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: raghavendar
+Password: 
+Login Succeeded
+
+LAMU02WJ2MEHTD6:RabbitMQ rlokinen$ docker push raghavendar/docker-training:latest
+The push refers to repository [docker.io/raghavendar/docker-training]
+1a8148369769: Pushed 
+ccdb13a20bf2: Mounted from library/ubuntu 
+9513cdf4e497: Mounted from library/ubuntu 
+7f083f9454c0: Mounted from library/ubuntu 
+29f36b5893dc: Mounted from library/ubuntu 
+latest: digest: sha256:274157d312f0f1e9447b66b8eb40422631ab262361b43d7af9f5e9f692440cc5 size: 1362
+```
